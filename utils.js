@@ -1,10 +1,10 @@
 const CACHE_EXPIRATION_TIME = hoursToMilliseconds(1);
 export function filteredArticles(data) {
   return data?.filter((article) => {
-    if (article?.urlToImage !== null) {
-      return article?.urlToImage?.trim() !== ""; // Combine remaining checks
+    if (article?.imagePath !== null) {
+      return article?.imagePath?.trim() !== ""; // Combine remaining checks
     } else {
-      return false; // Exclude articles with null urlToImage
+      return false; // Exclude articles with null imagePath
     }
   });
 }
@@ -54,3 +54,54 @@ export function retrieveCachedData(CACHE_KEY) {
   const cachedData = JSON.parse(localStorage.getItem(CACHE_KEY));
   return cachedData;
 }
+
+
+export const staticArticles = [
+  {
+    title: "First Article",
+    imagePath: "src/assets/images/image.png",
+    author: "Mahmoud Mansy",
+    
+  },
+  {
+    title: "Second Article",
+    imagePath: "src/assets/images/image1.png",
+    author: "Mahmoud Mansy",
+  },
+  {
+    title: "Third Article",
+    imagePath: "src/assets/images/image2.png",
+    author: "Mahmoud Mansy",
+  },
+  {
+    title: "Third Article",
+    imagePath: "src/assets/images/image3.png",
+    author: "Mahmoud Mansy",
+  },
+  {
+    title: "Third Article",
+    imagePath: "src/assets/images/image4.png",
+    author: "Mahmoud Mansy",
+  },
+  {
+    title: "Third Article",
+    imagePath: "src/assets/images/image5.png",
+    author: "Mahmoud Mansy",
+  },
+  {
+    title: "Third Article",
+    imagePath: "src/assets/images/image6.png",
+    author: "Mahmoud Mansy",
+  },
+  {
+    title: "Third Article",
+    imagePath: "src/assets/images/image7.png",
+    author: "Mahmoud Mansy",
+  },
+  {
+    title: "Third Article",
+    imagePath: "src/assets/images/image8.png",
+    author: "Mahmoud Mansy",
+  },
+];
+
