@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import user from "../assets/user.svg";
 import useArticle from "../hooks/useArticle";
-
+import { getRandomImage } from "../../utils";
 function Article({ article, category }) {
   const { setArticle, setCategory } = useArticle();
   const navigate = useNavigate();
@@ -21,7 +21,7 @@ function Article({ article, category }) {
     >
       <div className="h-fit">
         <img
-          src={article?.urlToImage || ""}
+          src={getRandomImage()}
           alt="article"
           className="object-cover w-full h-48 rounded-md"
         />

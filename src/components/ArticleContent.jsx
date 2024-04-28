@@ -1,6 +1,7 @@
 import articleImage from "../assets/Image.png";
 import adSpace from "../assets/o-ads-space.png";
 import user from "../assets/user.svg";
+import { getRandomImage } from "../../utils";
 
 function ArticleContent({ article }) {
   return (

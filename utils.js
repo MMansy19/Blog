@@ -56,52 +56,19 @@ export function retrieveCachedData(CACHE_KEY) {
 }
 
 
-export const staticArticles = [
-  {
-    title: "First Article",
-    imagePath: "src/assets/images/image.png",
-    author: "Mahmoud Mansy",
-    
-  },
-  {
-    title: "Second Article",
-    imagePath: "src/assets/images/image1.png",
-    author: "Mahmoud Mansy",
-  },
-  {
-    title: "Third Article",
-    imagePath: "src/assets/images/image2.png",
-    author: "Mahmoud Mansy",
-  },
-  {
-    title: "Third Article",
-    imagePath: "src/assets/images/image3.png",
-    author: "Mahmoud Mansy",
-  },
-  {
-    title: "Third Article",
-    imagePath: "src/assets/images/image4.png",
-    author: "Mahmoud Mansy",
-  },
-  {
-    title: "Third Article",
-    imagePath: "src/assets/images/image5.png",
-    author: "Mahmoud Mansy",
-  },
-  {
-    title: "Third Article",
-    imagePath: "src/assets/images/image6.png",
-    author: "Mahmoud Mansy",
-  },
-  {
-    title: "Third Article",
-    imagePath: "src/assets/images/image7.png",
-    author: "Mahmoud Mansy",
-  },
-  {
-    title: "Third Article",
-    imagePath: "src/assets/images/image8.png",
-    author: "Mahmoud Mansy",
-  },
+ const randomImages  = [
+    "src/assets/images/image.png",
+    "src/assets/images/image1.png",
+    "src/assets/images/image2.png",
+    "src/assets/images/image3.png",
+    "src/assets/images/image4.png",
+    "src/assets/images/image5.png",
+    "src/assets/images/image6.png",
+    "src/assets/images/image7.png",
+    "src/assets/images/image8.png",
 ];
 
+export const getRandomImage = () => {
+    const randomIndex = Math.floor(Math.random() * randomImages .length);
+    return randomImages [randomIndex];
+  };

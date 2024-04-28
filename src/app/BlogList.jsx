@@ -15,16 +15,16 @@ function BlogList() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const CACHE_KEY = "cachedArticles";
-  const PAGE_SIZE = useRef(9);
+  const PAGE_SIZE = useRef(6);
   const searchFocus = useRef(null);
-  // const PAGE_NUMBER = useRef(1);
+
   const category = "technology";
   const NEWS_API_KEY = import.meta.env.VITE_NEWS_API_KEY;
 
   const debouncedFetch = debounce(fetchNewsData, 500);
 
   function handleSearchChange(newQuery) {
-    PAGE_SIZE.current = 9;
+    PAGE_SIZE.current = 6;
     debouncedFetch(newQuery);
   }
   async function fetchNewsData(newQuery) {
@@ -52,7 +52,7 @@ function BlogList() {
   }
   async function fetchAndCacheData() {
     try {
-      PAGE_SIZE.current = 9;
+      PAGE_SIZE.current = 6;
       setLoading(true);
       setError(null);
       const cachedData = retrieveCachedData(CACHE_KEY);
@@ -75,7 +75,7 @@ function BlogList() {
   }
   function loadMore() {
     if (PAGE_SIZE.current <= 91) {
-      PAGE_SIZE.current += 9;
+      PAGE_SIZE.current += 3;
       fetchNewsData();
     } else {
       throw Error("Max Load Articles");
@@ -91,6 +91,7 @@ function BlogList() {
     }
     fetchAndCacheData();
   }, []);
+
   return (
     <div className="px-4 sm:px-8 lg:px-40 w-full">
       <Header
